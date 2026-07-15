@@ -37,5 +37,34 @@ src
 ## Database
 Database Name: bank_management
 
+## 📸 Project Screenshots
+
+### 1. Create Account
+![Create Account](screenshots/create-account.png)
+
+### 2. View All Customers
+![View All Customers](screenshots/view-customers.png)
+
+### 3. Deposit Money
+![Deposit Money](screenshots/deposit-money.png)
+
+### 4. Withdraw Money
+![Withdraw Money](screenshots/withdraw-money.png)
+
+### 5. Check Balance
+![Check Balance](screenshots/check-balance.png)
+
+### 6. Search Customer
+![Search Customer](screenshots/search-customer.png)
+
+### 7. Update Customer
+![Update Customer](screenshots/update-customer.png)
+
+### 8. Updated Customer Details
+![Updated Customer](screenshots/updated-customer.png)
+
+### 9. Delete Account
+![Delete Account](screenshots/delete-account.png)
+
 ## Author
 Ashish Pujari
