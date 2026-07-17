@@ -1,5 +1,7 @@
 package com.bank.dao;
 
+import com.bank.model.Transaction;
+import com.bank.dao.TransactionDAO;
 import java.sql.ResultSet;
 import com.bank.model.Customer;
 import com.bank.util.DBConnection;
@@ -8,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class CustomerDAO {
+
+    TransactionDAO transactionDAO = new TransactionDAO();
 
     public boolean isAccountExists(String accountNumber) {
 
@@ -117,7 +121,17 @@ public class CustomerDAO {
             int rows = ps.executeUpdate();
 
             if (rows > 0) {
+
+                Transaction transaction = new Transaction(
+                        accountNumber,
+                        "Deposit",
+                        amount
+                );
+
+                transactionDAO.saveTransaction(transaction);
+
                 System.out.println("Amount Deposited Successfully...");
+
             } else {
                 System.out.println("Account Not Found...");
             }
@@ -148,7 +162,17 @@ public class CustomerDAO {
             int rows = ps.executeUpdate();
 
             if (rows > 0) {
+
+                Transaction transaction = new Transaction(
+                        accountNumber,
+                        "Withdraw",
+                        amount
+                );
+
+                transactionDAO.saveTransaction(transaction);
+
                 System.out.println("Amount Withdrawn Successfully...");
+
             } else {
                 System.out.println("Insufficient Balance or Account Not Found...");
             }
@@ -263,5 +287,10 @@ public class CustomerDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void viewTransactionHistory(String accountNumber) {
+
+        transactionDAO.viewTransactionHistory(accountNumber);
+
     }
 }
