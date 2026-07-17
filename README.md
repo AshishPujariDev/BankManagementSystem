@@ -66,5 +66,17 @@ Database Name: bank_management
 ### 9. Delete Account
 ![Delete Account](screenshots/delete-account.png)
 
+## Transaction History
+
+The system stores every Deposit and Withdraw transaction in the database.
+
+Each transaction contains:
+- Account Number
+- Transaction Type (Deposit/Withdraw)
+- Amount
+- Date & Time
+
+Users can view complete transaction history from the menu.
+
 ## Author
 Ashish Pujari
